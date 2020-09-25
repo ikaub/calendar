@@ -1,0 +1,5 @@
+.text-secondary{
+  &:link, &:active, &:visited {
+    text-decoration: none;
+  }
+}
