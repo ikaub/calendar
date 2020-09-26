@@ -21,7 +21,7 @@ const Day = ({day}) => {
         <span className={
             `text-center month-day 
             ${notCurrentMonth ? 'text-muted' : ''}
-            ${isToday(day, currentDate.getMonth(), new Date()) ? 'today bg-warning text-dark' : ''}`
+            ${isToday(day, currentDate.getMonth(), new Date()) ? 'bg-warning text-dark' : ''}`
         } key={day}>{renderDay(day)}
         </span>
     )

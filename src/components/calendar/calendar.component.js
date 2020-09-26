@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import './calendar.styles.scss';
 import DaysGrid from "../days-grid/days-grid.component";
 import MonthControllers from "../month-controllers/month-controllers.component";
