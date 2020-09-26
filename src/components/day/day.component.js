@@ -3,9 +3,8 @@ import './day.styles.scss';
 import {daysInMonth, isToday} from "../../utils/utils";
 import {useSelector} from "react-redux";
 
-const Day = ({index, startDay}) => {
+const Day = ({day}) => {
     const currentDate = useSelector(state => state.currentDate);
-    const day = index - (startDay - 2);
     const notCurrentMonth = day <= 0 || day > daysInMonth(currentDate);
     const prevMonthLength = daysInMonth(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1));
 
@@ -22,8 +21,8 @@ const Day = ({index, startDay}) => {
         <span className={
             `text-center month-day 
             ${notCurrentMonth ? 'text-muted' : ''}
-            ${isToday(day, currentDate.getMonth(), new Date()) ? 'badge badge-warning' : ''}`
-        } key={index}>{renderDay(day)}
+            ${isToday(day, currentDate.getMonth(), new Date()) ? 'today bg-warning text-dark' : ''}`
+        } key={day}>{renderDay(day)}
         </span>
     )
 }

@@ -16,7 +16,7 @@ const DaysGrid = () => {
                     .fill(null)
                     .map((_, index) => {
                         return (
-                            <Day index={index} startDay={startDay}/>
+                            <Day day={index - (startDay - 2)}/>
                         )
                     })
             }

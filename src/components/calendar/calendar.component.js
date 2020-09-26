@@ -8,7 +8,7 @@ const Calendar = () => {
     const weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
     return (
-        <div className='calendar-wrapper'>
+        <div className='calendar-wrapper bg-dark'>
             <div className='calendar text-white'>
                 <MonthControllers />
                 <DaysGrid />
