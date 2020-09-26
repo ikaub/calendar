@@ -1,0 +1,24 @@
+.calendar-image {
+  background-image: url("./../../assets/Untitled-1Artboard 1 copy.jpg");
+  background-size: cover;
+  background-position: left;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding-right: 3rem;
+
+  p {
+    max-width: 40%;
+    text-align: right;
+
+    &.calendar-image-header {
+      font-size: 4rem;
+    }
+
+    &.calendar-image-description {
+      font-size: 2rem;
+    }
+  }
+}

@@ -6,14 +6,14 @@ import './header.styles.scss';
 
 const Header = () => {
     return (
-        <Row className='align-items-center text-uppercase font-weight-bold'>
+        <Row className='align-items-center text-uppercase font-weight-bold header'>
             <Col xs={2}>
                 <img src={logo} alt=''/>
             </Col>
-            <Col xs={{offset: 7, span: 1}}>
+            <Col xs={{offset: 6, span: 2}}>
                 <Link className='text-secondary' to='/'>Home</Link>
             </Col>
-            <Col xs={{span: 1}}>
+            <Col xs={{span: 2}}>
                 <Link className='text-secondary' to='/about-us'>About Us</Link>
             </Col>
         </Row>

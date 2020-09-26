@@ -7,10 +7,10 @@ import Calendar from "../../components/calendar/calendar.component";
 const HomePage = () => {
     return (
         <Row>
-            <Col>
+            <Col xs={8} className='p-0 m-0'>
                 <CalendarImage />
             </Col>
-            <Col>
+            <Col className='p-0 m-0'>
                 <Calendar />
             </Col>
         </Row>

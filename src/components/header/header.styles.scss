@@ -1,5 +1,11 @@
-.text-secondary{
-  &:link, &:active, &:visited {
-    text-decoration: none;
+.header {
+  height: 15vh;
+  font-size: 2rem;
+
+  .text-secondary{
+    &:link, &:active, &:visited {
+      text-decoration: none;
+    }
   }
 }
+

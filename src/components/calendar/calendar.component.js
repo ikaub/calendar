@@ -1,9 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
+import './calendar.styles.scss';
+import DaysGrid from "../days-grid/days-grid.component";
+import MonthControllers from "../month-controllers/month-controllers.component";
 
 const Calendar = () => {
+
+    const weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
     return (
-        <div>
-            Calendar
+        <div className='calendar-wrapper'>
+            <div className='calendar text-white'>
+                <MonthControllers />
+                <DaysGrid />
+                <div className='weekdays'>
+                    {weekDays.map((day, index) => (
+                        <span className='text-center' key={index}>{day}</span>
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

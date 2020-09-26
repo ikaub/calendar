@@ -1,0 +1,7 @@
+.days-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid white;
+  padding: 3rem 0;
+}
