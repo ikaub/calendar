@@ -16,7 +16,7 @@ export function getEndDayOfMonth(date) {
 
 export function getDatesInMonth(date, size) {
     const startDay = getStartDayOfMonth(date).getDay();
-    let prevMonthCounter = -(startDay + (startDay === 0 ? 6 : 0));
+    let prevMonthCounter = -(startDay + (startDay === 0 ? 7 : 0)) + 1;
     return Array(size).fill(null).map((day) => {
         day = new Date(date.getFullYear(), date.getMonth(), ++prevMonthCounter);
         return day;
