@@ -1,4 +1,4 @@
-import {DISPLAY_DAY_DATA, NEXT_MONTH, PREVIOUS_MONTH, SHOW_POPUP} from "../actions/actions";
+import {DISPLAY_DAY_DATA, NEXT_MONTH, PREVIOUS_MONTH, SELECT_MONTH, SHOW_POPUP} from "../actions/actions";
 
 const INITIAL_STATE = {
     currentDate: new Date(),
@@ -27,6 +27,11 @@ const dateReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 dayInfo: action.payload
+            }
+        case SELECT_MONTH:
+            return {
+                ...state,
+                currentDate: new Date(state.currentDate.getFullYear(), action.payload)
             }
         default:
             return state;
