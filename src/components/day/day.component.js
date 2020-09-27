@@ -23,7 +23,7 @@ const Day = ({date}) => {
             className={
                 `text-center month-day 
             ${notCurrentMonth ? 'text-muted' : ''}
-            ${isToday(date.getDate(), currentDate.getMonth(), new Date()) ? 'bg-warning text-dark' : ''}`
+            ${isToday(date, new Date()) ? 'bg-warning text-dark' : ''}`
             }
             key={date.getTime()}
             onClick={handleClick}

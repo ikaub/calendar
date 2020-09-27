@@ -2,8 +2,8 @@ export function daysInMonth(date) {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
 
-export function isToday(day, month, date) {
-    return day === date.getDate() && month === date.getMonth();
+export function isToday(date, currentDate) {
+    return date.toDateString() === currentDate.toDateString();
 }
 
 export function getStartDayOfMonth(date) {
