@@ -1,0 +1,11 @@
+.month {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  padding: 1rem 0;
+  width: 100%;
+
+  .date-controllers {
+    cursor: pointer;
+  }
+}

@@ -12,23 +12,11 @@
     font-size: 2rem;
     font-weight: bolder;
 
-    .month {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid white;
-      padding: 1rem 0;
-      width: 100%;
-
-      .date-controllers {
-        cursor: pointer;
-      }
-    }
-
     .weekdays {
       border-bottom: 1px solid white;
       width: 100%;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(7, 1fr);
       padding: 1rem 0;
     }
   }

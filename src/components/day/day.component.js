@@ -1,29 +1,36 @@
 import React from "react";
 import './day.styles.scss';
-import {daysInMonth, isToday} from "../../utils/utils";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {displayDateData, showPopup} from "../../redux/actions/actions";
+import Popup from "../popup/popup.component";
+import {isToday} from "../../utils/utils";
 
-const Day = ({day}) => {
+const Day = ({date}) => {
+    const dispatch = useDispatch();
     const currentDate = useSelector(state => state.currentDate);
-    const notCurrentMonth = day <= 0 || day > daysInMonth(currentDate);
-    const prevMonthLength = daysInMonth(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1));
+    const notCurrentMonth = date.getMonth() !== currentDate.getMonth();
 
-    const renderDay = (day) => {
-        if (day > 0 && day <= daysInMonth(currentDate))
-            return ("0" + day).slice(-2);
-        if (day <= 0)
-            return prevMonthLength + day;
-        if (day > daysInMonth(currentDate))
-            return ("0" + (day - daysInMonth(currentDate))).slice(-2);
+    const handleClick = (event) => {
+        dispatch(displayDateData(date.toLocaleDateString('en-US', {month: 'long'}),
+            date.getDate(),
+            date.toLocaleDateString('en-US', {weekday: 'long'}))
+        );
+        dispatch(showPopup(true));
     }
 
     return (
-        <span className={
-            `text-center month-day 
+        <div
+            className={
+                `text-center month-day 
             ${notCurrentMonth ? 'text-muted' : ''}
-            ${isToday(day, currentDate.getMonth(), new Date()) ? 'bg-warning text-dark' : ''}`
-        } key={day}>{renderDay(day)}
-        </span>
+            ${isToday(date.getDate(), currentDate.getMonth(), new Date()) ? 'bg-warning text-dark' : ''}`
+            }
+            key={date.getTime()}
+            onClick={handleClick}
+        >
+            {("0" + date.getDate()).slice(-2)}
+            <Popup />
+        </div>
     )
 }
 

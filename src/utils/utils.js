@@ -7,12 +7,18 @@ export function isToday(day, month, date) {
 }
 
 export function getStartDayOfMonth(date) {
-    const weekDay = new Date(date.getFullYear(), date.getMonth(), 2).getDay();
-    if (weekDay === 0)
-        return 7;
-    return weekDay;
+    return new Date(date.getFullYear(), date.getMonth(), 2);
 }
 
 export function getEndDayOfMonth(date) {
     return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDay();
+}
+
+export function getDatesInMonth(date, size) {
+    const startDay = getStartDayOfMonth(date).getDay();
+    let prevMonthCounter = -(startDay + (startDay === 0 ? 6 : 0));
+    return Array(size).fill(null).map((day) => {
+        day = new Date(date.getFullYear(), date.getMonth(), ++prevMonthCounter);
+        return day;
+    });
 }

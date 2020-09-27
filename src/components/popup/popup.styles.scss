@@ -1,0 +1,31 @@
+.popup {
+  display: flex;
+  justify-content: space-around;
+
+  .popup-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .popup-input {
+    margin-top: 2rem;
+
+    label {
+      display: block;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    input {
+      border: 2px solid orange;
+      padding: 1rem;
+
+      &::placeholder {
+        font-weight: bold;
+        color: black;
+        font-size: 2rem;
+      }
+    }
+  }
+}
